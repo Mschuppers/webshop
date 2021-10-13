@@ -1,9 +1,9 @@
 package Application.SysFiles;
 
-import Application.Bank.Bank;
-import Application.Bank.BankAccount;
 import Application.Webshop.Artikel;
+import Application.Webshop.Bestelling;
 import Application.Webshop.Catalogus;
+import Application.Webshop.Klant;
 
 public class Application {
     public static void main(String[] args) {
@@ -27,12 +27,20 @@ public class Application {
          * Webshop Application Data
          */
         Catalogus Jaar2021 = new Catalogus(2021);
+        Klant Marco = new Klant("Marco", "IJmuiden");
+        Bestelling best = new Bestelling();
+
         Artikel a = new Artikel(1, 12.99, "Sleutelhanger");
         Artikel b = new Artikel(2, 22.24, "Webcambeschermer");
         Artikel c = new Artikel(3, 89.33, "Lampenkap deluxe");
+
         Jaar2021.voegToeAanCatalogus(a);
         Jaar2021.voegToeAanCatalogus(b);
         Jaar2021.voegToeAanCatalogus(c);
         Jaar2021.printCatalogus();
+
+        best.voegToeAanBestelling(a);
+        best.voegToeAanBestelling(c);
+        System.out.println(best.berekenTotaal());
     }
 }
