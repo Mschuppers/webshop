@@ -5,17 +5,10 @@ public class Artikel {
     private double prijs;
     private String omschrijving;
 
-    public int getId() {
-        return id;
-    }
-
     public double getPrijs() {
         return prijs;
     }
 
-    public String getOmschrijving() {
-        return omschrijving;
-    }
 
     public Artikel(int id, double prijs, String omschrijving) {
         this.id = id;
@@ -25,10 +18,9 @@ public class Artikel {
 
     @Override
     public String toString() {
-        return "Artikel{" +
+        return "Artikel" +
                 "id=" + id +
-                ", prijs=" + prijs +
-                ", omschrijving='" + omschrijving + '\'' +
-                '}';
+                ", prijs: " + prijs +"€"+
+                ", omschrijving:'" + omschrijving ;
     }
 }

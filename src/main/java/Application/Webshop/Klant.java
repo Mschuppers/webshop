@@ -15,13 +15,6 @@ public class Klant {
 
     }
 
-    public String getNaam() {
-        return naam;
-    }
-
-    public String getWoonplaats() {
-        return woonplaats;
-    }
 
     public Klant(String naam, String woonplaats) {
         this.naam = naam;
@@ -32,10 +25,9 @@ public class Klant {
     public String toString() {
         String s = Arrays.deepToString(lijstVanBestellingen.toArray());
 
-        return "Klant{" +
-                "naam='" + naam + '\'' +
-                ", woonplaats='" + woonplaats + '\'' +
-                ", lijstVanBestellingen=" + s +
-                '}';
+        return "\nKlantdetails" +
+                "\nNaam: '" + naam  +
+                "\nWoonplaats: '" + woonplaats +
+                "\nGemaakte bestellingen: \n" + s;
     }
 }

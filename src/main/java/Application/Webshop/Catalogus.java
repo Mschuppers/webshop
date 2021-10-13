@@ -24,14 +24,10 @@ public class Catalogus {
 
     @Override
     public String toString() {
-        return "Catalogus{" +
+        return "\nCatalogus" +
                 "jaartal=" + jaartal +
-                ", listOfCatalogusArtikelen=" + listOfCatalogusArtikelen +
-                '}';
+                " \n Artikelen beschikbaar in dit jaar" + listOfCatalogusArtikelen;
     }
 
-    //    @Override
-//    public String toString() {
-//        return "Catalogus{"+ this.getId()+" " +this.getPrijs() + " "+ this.getOmschrijving()+"}";
-//    }
+
 }

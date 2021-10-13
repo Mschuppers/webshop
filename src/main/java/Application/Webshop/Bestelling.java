@@ -2,6 +2,7 @@ package Application.Webshop;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Bestelling {
 
@@ -40,6 +41,7 @@ public class Bestelling {
 
     @Override
     public String toString() {
-        return "Bestelling op {" + this.getBesteldatum()+ " voor een totaal van " + this.totaalBedrag +"}";
+        String s = Arrays.deepToString(lijstVanBesteldeArtikelen.toArray());
+        return "\nBestelling op " + this.getBesteldatum()+ "\nBestaande uit artikelen"+ s + " voor een totaal van " + this.totaalBedrag+"€" ;
     }
 }
