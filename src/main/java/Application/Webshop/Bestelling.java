@@ -31,14 +31,15 @@ public class Bestelling {
 
     public String berekenTotaal() {
         for (Artikel a : lijstVanBesteldeArtikelen) {
-            totaalBedrag = +a.getPrijs();
+            totaalBedrag += a.getPrijs();
         }
 
-        return toString(this);
+        return toString();
     }
 
 
-    public String toString(Bestelling b) {
-        return "Bestelling op {" + b.getBesteldatum()+ " voor een totaal van " + b.totaalBedrag +"}";
+    @Override
+    public String toString() {
+        return "Bestelling op {" + this.getBesteldatum()+ " voor een totaal van " + this.totaalBedrag +"}";
     }
 }

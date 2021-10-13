@@ -17,12 +17,21 @@ public class Catalogus {
 
     public void printCatalogus(){
         for (Artikel a:listOfCatalogusArtikelen) {
-            System.out.println(toString(a));
+            System.out.println(a);
         }
 
     }
 
-    public String toString(Artikel a) {
-        return "Catalogus{"+ a.getId()+" " +a.getPrijs() + " "+ a.getOmschrijving()+"}";
+    @Override
+    public String toString() {
+        return "Catalogus{" +
+                "jaartal=" + jaartal +
+                ", listOfCatalogusArtikelen=" + listOfCatalogusArtikelen +
+                '}';
     }
+
+    //    @Override
+//    public String toString() {
+//        return "Catalogus{"+ this.getId()+" " +this.getPrijs() + " "+ this.getOmschrijving()+"}";
+//    }
 }

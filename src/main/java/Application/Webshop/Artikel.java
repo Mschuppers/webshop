@@ -22,4 +22,13 @@ public class Artikel {
         this.prijs = prijs;
         this.omschrijving = omschrijving;
     }
+
+    @Override
+    public String toString() {
+        return "Artikel{" +
+                "id=" + id +
+                ", prijs=" + prijs +
+                ", omschrijving='" + omschrijving + '\'' +
+                '}';
+    }
 }

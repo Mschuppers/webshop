@@ -41,6 +41,8 @@ public class Application {
 
         best.voegToeAanBestelling(a);
         best.voegToeAanBestelling(c);
+        Marco.voegAanBestelGeschiedenisToe(best);
         System.out.println(best.berekenTotaal());
+        System.out.println(Marco);
     }
 }
