@@ -26,8 +26,8 @@ public class Klant {
         String s = Arrays.deepToString(lijstVanBestellingen.toArray());
 
         return "\nKlantdetails" +
-                "\nNaam: '" + naam  +
-                "\nWoonplaats: '" + woonplaats +
-                "\nGemaakte bestellingen: \n" + s;
+                "\nNaam: " + naam  +
+                "\nWoonplaats: " + woonplaats +
+                "\nGemaakte bestellingen:" + s;
     }
 }

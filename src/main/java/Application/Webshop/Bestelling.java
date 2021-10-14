@@ -42,6 +42,6 @@ public class Bestelling {
     @Override
     public String toString() {
         String s = Arrays.deepToString(lijstVanBesteldeArtikelen.toArray());
-        return "\nBestelling op " + this.getBesteldatum()+ "\nBestaande uit artikelen"+ s + " voor een totaal van " + this.totaalBedrag+"€" ;
+        return "\n\nBestelling op " + this.getBesteldatum()+ "\nBestaande uit artikelen"+ s + " voor een totaal van " + this.totaalBedrag+"€" ;
     }
 }

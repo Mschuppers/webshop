@@ -29,6 +29,7 @@ public class Application {
         Catalogus Jaar2021 = new Catalogus(2021);
         Klant Marco = new Klant("Marco", "IJmuiden");
         Bestelling best = new Bestelling();
+        Bestelling best2 = new Bestelling();
 
         Artikel a = new Artikel(1, 12.99, "Sleutelhanger");
         Artikel b = new Artikel(2, 22.24, "Webcambeschermer");
@@ -41,8 +42,14 @@ public class Application {
 
         best.voegToeAanBestelling(a);
         best.voegToeAanBestelling(c);
+
+        best2.voegToeAanBestelling(c);
+        best2.voegToeAanBestelling(b);
+
         Marco.voegAanBestelGeschiedenisToe(best);
+        Marco.voegAanBestelGeschiedenisToe(best2);
         best.berekenTotaal();
+        best2.berekenTotaal();
         System.out.println(Marco);
 
     }
