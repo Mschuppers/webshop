@@ -35,11 +35,18 @@ public class Artikel {
         this.omschrijving = omschrijving;
     }
 
+    /*
+    * no arg parameter
+     */
+    public Artikel(){
+
+    }
+
     @Override
     public String toString() {
         return "\nArtikel" +
                 "id: " + id +
-                ", prijs: " + prijs +"€"+
+                ", prijs: " + prijs + "€" +
                 ", omschrijving:'" + omschrijving;
     }
 }

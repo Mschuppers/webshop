@@ -6,18 +6,14 @@ import java.util.Arrays;
 
 public class Bestelling {
 
-
     private LocalDate besteldatum;
     private double totaalBedrag;
     public ArrayList<Artikel> lijstVanBesteldeArtikelen = new ArrayList<>();
+
     public LocalDate getBesteldatum() {
         return besteldatum;
     }
 
-    public double getTotaalBedrag() {
-
-        return totaalBedrag;
-    }
 
     public Bestelling() {
         this.besteldatum = LocalDate.now();
@@ -40,6 +36,6 @@ public class Bestelling {
     @Override
     public String toString() {
         String s = Arrays.deepToString(lijstVanBesteldeArtikelen.toArray());
-        return "\n\nBestelling op " + this.getBesteldatum()+ "\nBestaande uit artikelen"+ s + " voor een totaal van " + this.totaalBedrag+"€" ;
+        return "\n\nBestelling op " + this.getBesteldatum() + "\nBestaande uit artikelen" + s + " voor een totaal van " + this.totaalBedrag + "€";
     }
 }

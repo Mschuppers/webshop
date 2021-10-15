@@ -45,7 +45,7 @@ public class Klant {
 
 
     /*
-    *Implicit non var constructor
+     *Implicit non var constructor
      */
     public Klant() {
 
@@ -66,7 +66,6 @@ public class Klant {
     }
 
 
-
     public Klant(int id, String naam, String woonplaats, String wachtwoord, String emailadres) {
         this.id = id;
         this.naam = naam;
@@ -79,8 +78,8 @@ public class Klant {
     public String toString() {
         String s = Arrays.deepToString(lijstVanBestellingen.toArray());
 
-        return "\nid: "+ id +
-                "\nNaam: " + naam  +
+        return "\nid: " + id +
+                "\nNaam: " + naam +
                 "\nWoonplaats: " + woonplaats +
                 "\nGemaakte bestellingen:" + s;
     }
