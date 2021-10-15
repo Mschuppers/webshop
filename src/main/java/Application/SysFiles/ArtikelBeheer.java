@@ -37,6 +37,7 @@ public class ArtikelBeheer {
     }
 
     public Artikel zoekArtikel(){
+        System.out.println("Zoek welk artikel?");
         int artikelnummerTeVinden = sc.nextInt();
         for (Artikel a: lijstVanArtikelen) {
             if (artikelnummerTeVinden == a.getId()){

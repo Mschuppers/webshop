@@ -25,10 +25,10 @@ public class Bestelling {
     }
 
     public String berekenTotaal() {
+        this.totaalBedrag = 0;
         for (Artikel a : lijstVanBesteldeArtikelen) {
             totaalBedrag += a.getPrijs();
         }
-
         return toString();
     }
 
@@ -36,6 +36,6 @@ public class Bestelling {
     @Override
     public String toString() {
         String s = Arrays.deepToString(lijstVanBesteldeArtikelen.toArray());
-        return "\n\nBestelling op " + this.getBesteldatum() + "\nBestaande uit artikelen" + s + " voor een totaal van " + this.totaalBedrag + "€";
+        return "\n\nBestelling op " + this.getBesteldatum() + "\nBestaande uit " + lijstVanBesteldeArtikelen.size()+ " artikelen" + s + " voor een totaal van " + this.totaalBedrag + "€";
     }
 }

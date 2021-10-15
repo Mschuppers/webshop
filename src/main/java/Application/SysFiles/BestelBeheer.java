@@ -9,12 +9,14 @@ public class BestelBeheer {
 
 
     public void nieuweBestelling(Artikel a) {
-        this.b.voegToeAanBestelling(a);
+        b.voegToeAanBestelling(a);
+
     }
 
 
     public String printBestelOverzicht() {
-        return this.b.toString();
+        b.berekenTotaal();
+        return b.toString();
     }
 
 
