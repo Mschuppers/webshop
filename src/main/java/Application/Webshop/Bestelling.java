@@ -9,9 +9,7 @@ public class Bestelling {
 
     private LocalDate besteldatum;
     private double totaalBedrag;
-
     public ArrayList<Artikel> lijstVanBesteldeArtikelen = new ArrayList<>();
-
     public LocalDate getBesteldatum() {
         return besteldatum;
     }
