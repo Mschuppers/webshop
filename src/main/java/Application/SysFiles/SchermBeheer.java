@@ -8,24 +8,45 @@ public class SchermBeheer {
     KlantBeheer kB = new KlantBeheer();
     BestelBeheer bB = new BestelBeheer();
 
+
+
     public void menuSelection() {
+        kB.defaultInitialisation();
+        System.out.println("Welkom bij de marktplaats \nGeef uw keuze op \n1) Registreer nieuwe klant \n2)Login");
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
 
         switch (input) {
             case 1:
                 kB.registreerNieuweKlant();
+                menuSelection();
                 break;
             case 2:
+                System.out.println("Graag uw email & wachtwoord");
 
-            case 3:
-                System.out.println(aB.printArtikelOverzicht());
-                break;
+                int loggedInAs = kB.logKlantIn(sc.next(), sc.next());
+                if (loggedInAs == 1) {
+                    menuSelectionGebruiker();
+                }
+                if (loggedInAs == 2) {
+                    menuSelectionBeheerder();
+                }
+                if (loggedInAs == 0) {
+                    menuSelection();
+                    break;
+                }
         }
     }
 
     public void menuSelectionGebruiker() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Welkom bij het gebruikersmenu " +
+                "\nMaak uw selectie" +
+                "\n1)Artikeloverzicht" +
+                "\n2)Nieuw artikeltoevoegen " +
+                "\n3)Nieuwe bestelling maken" +
+                "\n4)Besteloverzicht tonen");
+
         int input = sc.nextInt();
         switch (input) {
             case 1:
@@ -40,13 +61,24 @@ public class SchermBeheer {
             case 4:
                 System.out.println(bB.printBestelOverzicht());
                 break;
+            case 0:
+                menuSelection();
+                break;
         }
     }
 
-    public int menuSelectionBeheerder() {
+    public void menuSelectionBeheerder() {
         Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        System.out.println("Welkom bij het beheerdersmenu" +
+                "\nMaak uw keuze" +
+                "\n1) Registreer een nieuwe klant" +
+                "\n2) Toon alle beschikbare klanten" +
+                "\n3) Verwijder een klant" +
+                "\n4) Toon alle artikelen" +
+                "\n5) Verwijder een artikel" +
+                "\n6) Registreer een nieuwe beheerder");
 
+        int input = sc.nextInt();
         switch (input) {
             case 1:
                 kB.registreerNieuweKlant();
@@ -63,10 +95,14 @@ public class SchermBeheer {
             case 5:
                 aB.verwijderArtikel();
                 break;
+            case 6:
+                kB.registreerNieuweBeheerder();
+                break;
             case 0:
-                return 0;
+                menuSelection();
+                break;
         }
-        return 2;
+
     }
 
 

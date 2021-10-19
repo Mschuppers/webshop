@@ -12,15 +12,6 @@ public class ArtikelBeheer {
     int jaar = Calendar.getInstance().get(Calendar.YEAR);
     ArrayList<Artikel> lijstVanArtikelen = new ArrayList<>();
 
-//    Artikel a = new Artikel(1, 12.99, "Sleutelhanger");
-//    Artikel b = new Artikel(2, 22.24, "Webcambeschermer");
-//    Artikel c = new Artikel(3, 89.33, "Lampenkap deluxe");
-//
-//        listOfCatalogusArtikelen.add(a);
-//        listOfCatalogusArtikelen.add(b);
-//        listOfCatalogusArtikelen.add(c);
-
-
     public Artikel registreerNieuwArtikel() {
         Artikel a = new Artikel(0, 0.00, "");
         Scanner sc = new Scanner(System.in);

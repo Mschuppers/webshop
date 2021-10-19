@@ -10,6 +10,7 @@ public class Klant {
     private String woonplaats;
     private String wachtwoord;
     private String emailadres;
+    private int isBeheerder;
 
     public void setId(int id) {
         this.id = id;
@@ -43,6 +44,17 @@ public class Klant {
         return woonplaats;
     }
 
+    public String getWachtwoord() {
+        return wachtwoord;
+    }
+
+    public String getEmailadres() {
+        return emailadres;
+    }
+
+    public int getIsBeheerder() {
+        return isBeheerder;
+    }
 
     /*
      *Implicit non var constructor
@@ -50,6 +62,7 @@ public class Klant {
     public Klant() {
 
     }
+
 
     private enum bezorgmethode {
         GEEN,
@@ -66,13 +79,15 @@ public class Klant {
     }
 
 
-    public Klant(int id, String naam, String woonplaats, String wachtwoord, String emailadres) {
+    public Klant(int id, String naam, String woonplaats, String wachtwoord, String emailadres, int isBeheerder) {
         this.id = id;
         this.naam = naam;
         this.woonplaats = woonplaats;
         this.wachtwoord = wachtwoord;
         this.emailadres = emailadres;
+        this.isBeheerder = 1;
     }
+
 
     @Override
     public String toString() {
@@ -81,6 +96,13 @@ public class Klant {
         return "\nid: " + id +
                 "\nNaam: " + naam +
                 "\nWoonplaats: " + woonplaats +
+                "\nEmailadres: " + emailadres +
                 "\nGemaakte bestellingen:" + s;
     }
+
+    public int hashCode() {
+        return this.emailadres.hashCode() + +this.id+this.isBeheerder;
+    }
+
+
 }
