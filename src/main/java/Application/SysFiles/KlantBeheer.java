@@ -8,18 +8,20 @@ import java.util.Scanner;
 
 public class KlantBeheer {
     ArrayList<Klant> lijstVanKlanten = new ArrayList<>();
+    ArrayList<Klant> lijstVanBeheerders = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+    int loggedInAs;
 
 
     public void defaultInitialisation(){
-        Klant administrator = new Klant(0, "admin", "admin", "a", "a", 2);
+        Klant administrator = new Klant(0, "admin", "admin", "admin", "admin", 2);
         Klant maker = new Klant(1, "Marco", "IJmuiden", "m", "m", 1);
 
         lijstVanKlanten.add(administrator);
         lijstVanKlanten.add(maker);
-        System.out.println(administrator);
+        System.out.println(lijstVanKlanten);
     }
 
-    static Scanner sc = new Scanner(System.in);
 
     public void registreerNieuweKlant() {
         Klant k = new Klant(lijstVanKlanten.size() + 1, "", "", "", "", 1);
@@ -33,14 +35,11 @@ public class KlantBeheer {
         k.setEmailadres(sc.next());
         lijstVanKlanten.add(k);
         System.out.println("Added: " + k.getId() + " naam: " + k.getNaam() + " te: " + k.getWoonplaats());
+
     }
 
     public void registreerNieuweBeheerder() {
-        Klant k = new Klant(lijstVanKlanten.size()+1, "", "", "", "", 2);
         registreerNieuweKlant();
-
-        lijstVanKlanten.add(k);
-        System.out.println("Added: " + k.getId() + " naam: " + k.getNaam() + " te: " + k.getWoonplaats());
 
     }
 
@@ -51,13 +50,13 @@ public class KlantBeheer {
     }
 
     public int logKlantIn(String emailadres, String wachtwoord) {
-        int loggedInAs = 0;
+
         for (Klant a : lijstVanKlanten) {
             if (emailadres.equals(a.getEmailadres()) && wachtwoord.equals(a.getWachtwoord())){
                 if (a.getIsBeheerder() == 2) {
-                    loggedInAs = 2;
+                    this.loggedInAs = 2;
                 } else {
-                    loggedInAs = 1;
+                    this.loggedInAs = 1;
                 }
                 return loggedInAs;
 
@@ -76,6 +75,11 @@ public class KlantBeheer {
 
     @Override
     public String toString() {
+        for (Klant a:lijstVanKlanten
+             ) {
+            System.out.println(a.getId()+" "+a.getNaam()+" " + a.getWoonplaats()+ " "+a.getEmailadres());
+        }
+
         return Arrays.deepToString(lijstVanKlanten.toArray());
     }
 }

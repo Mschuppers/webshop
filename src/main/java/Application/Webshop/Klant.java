@@ -12,49 +12,33 @@ public class Klant {
     private String emailadres;
     private int isBeheerder;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setEmailadres(String emailadres) {
         this.emailadres = emailadres;
     }
-
     public void setNaam(String naam) {
         this.naam = naam;
     }
-
     public void setWoonplaats(String woonplaats) {
         this.woonplaats = woonplaats;
     }
-
-    public void setWachtwoord(String wachtwoord) {
-        this.wachtwoord = wachtwoord;
-    }
+    public void setWachtwoord(String wachtwoord) {this.wachtwoord = wachtwoord;}
 
     public int getId() {
         return id;
     }
-
     public String getNaam() {
         return naam;
     }
-
     public String getWoonplaats() {
         return woonplaats;
     }
-
     public String getWachtwoord() {
         return wachtwoord;
     }
-
     public String getEmailadres() {
         return emailadres;
     }
-
-    public int getIsBeheerder() {
-        return isBeheerder;
-    }
+    public int getIsBeheerder() {return isBeheerder;}
 
     /*
      *Implicit non var constructor
@@ -85,7 +69,7 @@ public class Klant {
         this.woonplaats = woonplaats;
         this.wachtwoord = wachtwoord;
         this.emailadres = emailadres;
-        this.isBeheerder = 1;
+        this.isBeheerder = isBeheerder;
     }
 
 
@@ -97,7 +81,7 @@ public class Klant {
                 "\nNaam: " + naam +
                 "\nWoonplaats: " + woonplaats +
                 "\nEmailadres: " + emailadres +
-                "\nGemaakte bestellingen:" + s;
+                "\nBeheerderrol: " + isBeheerder ;
     }
 
     public int hashCode() {

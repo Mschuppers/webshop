@@ -25,13 +25,13 @@ public class SchermBeheer {
                 System.out.println("Graag uw email & wachtwoord");
 
                 int loggedInAs = kB.logKlantIn(sc.next(), sc.next());
-                if (loggedInAs == 1) {
+                while (loggedInAs == 1) {
                     menuSelectionGebruiker();
                 }
-                if (loggedInAs == 2) {
+                while (loggedInAs == 2) {
                     menuSelectionBeheerder();
                 }
-                if (loggedInAs == 0) {
+                while (loggedInAs == 0) {
                     menuSelection();
                     break;
                 }
