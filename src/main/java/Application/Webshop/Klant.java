@@ -8,9 +8,12 @@ public class Klant {
     private int id;
     private String naam;
     private String woonplaats;
+    private String straatnaam;
+    private String postcode;
     private String wachtwoord;
     private String emailadres;
     private int isBeheerder;
+    public int bezorgmethode;
 
     public void setEmailadres(String emailadres) {
         this.emailadres = emailadres;
@@ -22,6 +25,9 @@ public class Klant {
         this.woonplaats = woonplaats;
     }
     public void setWachtwoord(String wachtwoord) {this.wachtwoord = wachtwoord;}
+    public void setBezorgmethode(int bezorgmethode) {this.bezorgmethode = bezorgmethode;}
+    public void setStraatnaamHuisnummer(String straatnaamHuisnummer) {this.straatnaam = straatnaamHuisnummer;}
+    public void setPostcode(String postcode) {this.postcode = postcode;}
 
     public int getId() {
         return id;
@@ -40,6 +46,8 @@ public class Klant {
     }
     public int getIsBeheerder() {return isBeheerder;}
 
+    public int getBezorgmethode() { return bezorgmethode; }
+
     /*
      *Implicit non var constructor
      */
@@ -48,12 +56,6 @@ public class Klant {
     }
 
 
-    private enum bezorgmethode {
-        GEEN,
-        BEZORGEN,
-        AFHALEN,
-        MAGAZIJN
-    }
 
     ArrayList<Bestelling> lijstVanBestellingen = new ArrayList<>();
 
@@ -63,11 +65,12 @@ public class Klant {
     }
 
 
-    public Klant(int id, String naam, String woonplaats, String wachtwoord, String emailadres, int isBeheerder) {
+    public Klant(int id, String naam, String woonplaats, int bezorgmethode, String emailadres,String wachtwoord,  int isBeheerder) {
         this.id = id;
         this.naam = naam;
         this.woonplaats = woonplaats;
         this.wachtwoord = wachtwoord;
+        this.bezorgmethode = bezorgmethode;
         this.emailadres = emailadres;
         this.isBeheerder = isBeheerder;
     }
@@ -79,14 +82,10 @@ public class Klant {
 
         return "\nid: " + id +
                 "\nNaam: " + naam +
-                "\nWoonplaats: " + woonplaats +
                 "\nEmailadres: " + emailadres +
-                "\nBeheerderrol: " + isBeheerder ;
+                "\nBestellingen: ";
     }
 
-    public int hashCode() {
-        return this.emailadres.hashCode() + +this.id+this.isBeheerder;
-    }
 
 
 }
